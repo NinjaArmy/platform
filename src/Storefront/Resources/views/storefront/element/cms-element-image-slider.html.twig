@@ -11,7 +11,7 @@
                 ariaLive: sliderConfig.autoSlide.value ? false : true,
                 autoplayButtonOutput: false,
                 nav: sliderConfig.navigationDots.value ? true : false,
-                controls: sliderConfig.navigationArrows.value ? true : false,
+                controls: sliderConfig.navigationArrows.value !== 'None' ? true : false,
                 autoHeight: (sliderConfig.displayMode.value == "standard") ? true : false
             }
         } %}
@@ -65,7 +65,7 @@
                         </div>
 
                         {% block element_image_slider_controls %}
-                            {% if sliderConfig.navigationArrows.value %}
+                            {% if baseSliderOptions.slider.controls %}
                                 <div class="image-slider-controls-container">
                                     <div class="base-slider-controls"
                                         data-base-slider-controls="true">
